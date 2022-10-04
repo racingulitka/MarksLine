@@ -283,6 +283,77 @@ footer{
     background: yellow;
     text-align: center;
 }
+/*-----------------mobile menu-----------------------*/
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes rotateMenu1{
+    0%{
+        transform:rotate(90deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+        border-radius:50%;
+    }
+}
+
+@keyframes rotateMenu2{
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(90deg);
+    }
+}
+
+.menu_mobile{
+    display:none;
+    width:45px;
+    height:45px;
+    background:yellow;
+    border-radius:5px;
+    border:1px solid black;
+    font-size:31px;
+    font-weight:700;
+    text-align:center;
+    transform:rotate(90deg);
+    padding:4px 0px 0px 0px;
+    font-family:arial;
+    color: black;
+}
+
+.punkt{
+    display:none;
+    color:black;
+    font-size:26px;
+    font-family:arial;
+    font-weight:500;
+    margin:0 0 0 10px;
+    width:300px;
+    opacity:1;
+    background:yellow;
+    border-bottom: 1px dotted black;
+}
+
+.punkt>a{
+    display: inline-block;
+    width: 260px;
+}
+
+.punkt:before{
+    content:"";
+    margin:0 20px 0 0;
+
+}
 /*---------------МЕДИАЗАПРОСЫ - СЕТКА Bootstrap 4------------------*/
 @media(min-width:1200px){
     .container{
@@ -307,32 +378,26 @@ footer{
         width:520px;
         margin:0 auto;
     }
-
 }
 @media(max-width:576px){
     .container{
         width:100%;
-        margin:0 auto;
+        margin:0px auto;
         }
     .menu {
-    display:flex;
-    flex-flow:column nowrap;
-    justify-content: center;
-    width: 100%;
-    position: relative;
+    display: none;
     }
-    .menu_buttons {
-    font-size: 24px;
-    position: relative;
+    .menu_mobile{
+        display: block;
+    }
+    .punkt{
+        display: none;
     }
     .header_bannner {
     min-width: 320px;
     background-size: contain;
     background-repeat: no-repeat;
     height: 300px;
-     }
-     .menu{
-        min-width: 320px;
      }
     .phone{
     flex-flow: column wrap;
@@ -372,3 +437,6 @@ footer{
 .container{
     border:1px solid black;
 }
+
+
+
