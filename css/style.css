@@ -355,7 +355,7 @@ footer{
 
 }
 /*---------------МЕДИАЗАПРОСЫ - СЕТКА Bootstrap 4------------------*/
-@media(min-width:1200px){
+/*@media(min-width:1200px){
     .container{
         width:1140px;
         margin:0 auto;
@@ -369,17 +369,11 @@ footer{
 }
 @media(min-width:768px) and (max-width:992px){
     .container{
-        width:720px;
+        width:730px;
         margin:0 auto;
     }
-}
-@media(min-width:576px) and (max-width:768px){
-    .container{
-        width:520px;
-        margin:0 auto;
-    }
-}
-@media(max-width:576px){
+}*/
+@media(max-width:720px){
     .container{
         width:100%;
         margin:0px auto;
@@ -394,8 +388,9 @@ footer{
         display: none;
     }
     .header_bannner {
+    width: 100%;
     min-width: 320px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     height: 300px;
      }

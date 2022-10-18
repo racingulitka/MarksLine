@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style_base.css">
+	<link rel="stylesheet" href="css/style_ceiling_calculator.css">
+	<script src="js/script_ceiling_calculator.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="shortcut icon" href="img/icon.jpg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Расчет стоимости натяжного потолка</title>
+	<meta name = "description" content = "На данной странице представлен калькулятор для рассчета стоимости натяжного потолка по различным параметрам для помещений любой площади."/>
+</head>
+<body>
+	<!--------------------------desktop menu---------------------------->
+		<div class="menu">
+			<div class="menu_buttons"><a href="index.html#about_us">О нас</a></div>
+			<div class="menu_buttons"><a href="index.html#service">Услуги</a></div>
+			<div class="menu_buttons"><a href="index.html#map">География работ</a></div>
+			<div class="menu_buttons"><a href="index.html#speed">Сроки выполнения</a></div>
+			<div class="menu_buttons"><a href="index.html#portfolio">Наши работы</a></div>
+			<div class="menu_buttons"><a href="ceiling_calculator.html" target="_blank">Калькулятор</a></div>
+			<div class="menu_buttons"><a href="index.html#contacts">Контакты</a></div>
+		</div>
+<!------------------------mobile menu------------------------------>
+		<div class="menu_mobile" id="menu" onclick="open1();">
+		<ul id="hide">|||</div>
+			<li class="punkt" id="menu_open_check1"><a href="index.html#about_us">О нас</a></li>
+			<li class="punkt" id="menu_open_check2"><a href="index.html#service">Услуги</a></li>
+			<li class="punkt" id="menu_open_check3"><a href="index.html#map">География работ</a></li>
+			<li class="punkt" id="menu_open_check4"><a href="index.html#speed">Сроки выполнения</a></li>
+			<li class="punkt" id="menu_open_check5"><a href="index.html#portfolio">Наши работы</a></li>
+			<li class="punkt" id="menu_open_check6"><a href="ceiling_calculator.html" target = "_blank">Калькулятор</a></li>
+			<li class="punkt" id="menu_open_check7"><a href="index.html#contacts">Контакты</a></li>
+		</ul>
+	</div>
+	<div class="header_bannner">
+	</div>
+<!----------------------------------------------------------------->
+	<h1>Расчет стоимости натяжного потолка "под ключ"</h1>
+	<div class = "wrapper">
+<!-------------------------------------------------square------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Площадь помещения, кв.м.</div>
+			<input class = "inputNumber" id = "square" type = "number" min = "1" max = "100" step = "1" value = "1" oninput = "squareCostFunction(); spotLightsCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "squareCost">1500</div>
+			рублей
+		</div>
+<!-------------------------------------------------room max width----------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Ширина помещения более 3,6 метров</div>
+			<input class = "inputCheckBox" id = "maxWidth" type = "checkbox" oninput = "squareCostFunction(); totalFunction();">
+		</div>
+<!-------------------------------------------------corners------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Количество углов в помещении</div>
+			<input class = "inputNumber" id = "corners" type = "number" min = "3" max = "99" step = "1" value = "3" oninput = "cornersCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "cornersCost"></div>
+			рублей
+		</div>
+<!-------------------------------------------------pipes------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Количество труб</div>
+			<input class = "inputNumber" id = "pipes" type = "number" min = "0" max = "99" step = "1" value = "0" oninput = "pipesCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "pipesCost">0</div>
+			рублей
+		</div>
+<!-------------------------------------------------spotLight------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Количество точечных светильников</div>
+			<input class = "inputNumber" id = "spotLights" type = "number" min = "0" max = "99" step = "1" value = "0" oninput = "spotLightsCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "spotLightsCost">0</div>
+			рублей
+		</div>
+<!-------------------------------------------------big light----------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Монтаж люстры</div>
+			<input class = "inputCheckBox" id = "bigLight" type = "checkbox" value = "no" oninput = "bigLightCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "bigLightCost">0</div>
+			рублей
+		</div>
+<!-------------------------------------------------cornice------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Монтаж карниза, п.м.</div>
+			<input class = "inputNumber" id = "cornice" type = "number" min = "0" max = "99" step = "1" value = "0" oninput = "corniceCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "corniceCost">1000</div>
+			рублей
+		</div>
+<!-------------------------------------------------ceramic tiles------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Монтаж по керамич. плитке, п.м.</div>
+			<input class = "inputNumber" id = "ceramicTiles" type = "number" min = "0" max = "99" step = "1" value = "0" oninput = "ceramicTilesCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "ceramicTilesCost">1000</div>
+			рублей
+		</div>
+<!-------------------------------------------------timber------------------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Монтаж закладного бруса, п.м.</div>
+			<input class = "inputNumber" id = "timber" type = "number" min = "0" max = "99" step = "1" value = "0" oninput = "timberCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "timberCost">1000</div>
+			рублей
+		</div>
+<!-------------------------------------------------color roof----------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Цветной потолок (не белый)</div>
+			<input class = "inputCheckBox" id = "colorRoof" type = "checkbox" value = "no" oninput = "squareCostFunction(); totalFunction();">
+		</div>
+<!-------------------------------------------------credit----------------------------------->
+		<div class = "leftContainer">
+			<div class = "parameter">Рассрочка</div>
+			<input class = "inputCheckBox" id = "credit" type = "checkbox" value = "no" oninput = "creditCostFunction(); totalFunction();">
+		</div>
+		<div class = "rightContainer">
+			<div class = "cost" id = "creditCost">1000</div>
+			рублей
+		</div>
+<!-------------------------------------------------total----------------------------------->
+		<div class = "total">
+			<div class = "total_1">Итоговая стоимость</div>
+			<div class = "total_2" id = "total">0 рублей</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
