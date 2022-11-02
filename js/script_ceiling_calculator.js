@@ -1,5 +1,5 @@
 //ad variables
-let total, square, maxWidth, corners, pipes, spotLights, bigLight, cornice, ceramicTiles, timber, colorRoof, credit;
+let total, square, maxWidth, corners, pipes, spotLights, bigLight, cornice, ceramicTiles, timber, corniceNiche, colorRoof, credit;
 
 window.onload = function(){
 squareCostFunction();
@@ -10,6 +10,7 @@ bigLightCostFunction();
 corniceCostFunction();
 ceramicTilesCostFunction();
 timberCostFunction();
+corniceNicheCostFunction();
 creditCostFunction();
 totalFunction();
 }
@@ -112,6 +113,16 @@ function timberCostFunction(){
 	timber = document.getElementById("timberCost").innerHTML;
 }
 
+function corniceNicheCostFunction(){
+	if (document.getElementById("corniceNiche").value > 0){
+		document.getElementById("corniceNicheCost").innerHTML = document.getElementById("corniceNiche").value * 500;
+	}
+	else{
+		document.getElementById("corniceNicheCost").innerHTML = 0;
+	}
+	corniceNiche = document.getElementById("corniceNicheCost").innerHTML;
+}
+
 function creditCostFunction(){
 	if (document.getElementById("credit").checked == true){
 		document.getElementById("creditCost").innerHTML = 1000;
@@ -123,5 +134,5 @@ function creditCostFunction(){
 }
 
 function totalFunction(){
-	document.getElementById("total").innerHTML = (Number(square) + Number(corners) + Number(pipes) + Number(spotLights) + Number(bigLight) + Number(cornice) + Number(ceramicTiles) + Number(timber) + Number(credit)) + " рублей";
+	document.getElementById("total").innerHTML = (Number(square) + Number(corners) + Number(pipes) + Number(spotLights) + Number(bigLight) + Number(cornice) + Number(ceramicTiles) + Number(timber) + Number(corniceNiche) + Number(credit)) + " рублей";
 }
