@@ -1,0 +1,103 @@
+﻿/*-----------mainStyles-------------*/
+
+
+@keyframes toTheUp{
+	0% {bottom:0px;}
+	70% {bottom:10px;}
+	100% {bottom:0px;}
+}
+
+@keyframes anim1{
+	0% {top:95%;}
+	70% {top:-110%; opacity:1;}
+	71% {top:110%; opacity:0;}
+	80% {top:90%;}
+	100% {top:95%;}
+	
+}
+
+#arrowContainer{
+	position:fixed;
+	bottom:0px;
+	left:50%;
+	transform:translate(-50%, 0);
+	width:100px;
+	height:50px;
+	animation: toTheUp 1.2s ease-in-out infinite;
+	z-index:10;
+	opacity:0;
+}
+
+#arrowContainer:hover{
+	cursor:pointer;
+}
+
+#topArrowShadow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	filter:drop-shadow(0px 3px 3px #000);
+}
+
+#topArrow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	background:rgba(255, 255, 255, 0.4);
+	clip-path: polygon(50% 10%, 90% 30%, 90% 40%, 50% 20%, 10% 40%, 10% 30%);
+}
+
+#mainArrowShadow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	filter:drop-shadow(0px 3px 3px #000);
+}
+
+#mainArrow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	background:rgba(255, 255, 255, 0.4);
+	clip-path: polygon(50% 35%, 100% 60%, 100% 70%, 50% 45%, 0% 70%, 0 60%);
+}
+
+#bottomArrowShadow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	filter:drop-shadow(0px 3px 3px #000);
+}
+
+#bottomArrow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	width:100px;
+	height:50px;
+	background:rgba(255, 255, 255, 0.4);
+	clip-path: polygon(50% 60%, 90% 80%, 90% 90%, 50% 70%, 10% 90%, 10% 80%);
+}
+
+
+.div{
+	width:100%;
+	height:500px;
+	border:1px solid #00f;
+}

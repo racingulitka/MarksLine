@@ -238,19 +238,7 @@ li{
     width: 100%;
     justify-content: center;
 }
-/*Кнопка вверх*/
 
-.to_the_moon {
-    width:30px;
-    height:30px;
-    position:fixed;
-    bottom:50px;
-    right:50px;
-    color:black;
-}
-.to_the_moon:hover{
-    box-shadow: 0 0 10px yellow;
-}
 footer{
     margin: 80px 0 0 0;
     font-size: 14px;
