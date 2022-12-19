@@ -6,12 +6,11 @@ window.onload = () => {
 			document.getElementById("arrowContainer").style.cssText = "animation: toTheUp 1.2s ease-in-out infinite; opacity:0;";
 		}, 1200);
 	});
-
 };
 
 	
 
-let toUp = () => {
+const toUp = () =>{
 
 	let arrowContainer = document.createElement("div");
 	arrowContainer.id = "arrowContainer";
@@ -54,5 +53,7 @@ window.addEventListener("scroll", () => {
 	} else {
 		document.getElementById("arrowContainer").style.cssText = "opacity:0";
 	}
-
 });
+
+
+

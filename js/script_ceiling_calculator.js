@@ -1,7 +1,16 @@
 //ad variables
 let total, square, maxWidth, corners, pipes, spotLights, bigLight, cornice, ceramicTiles, timber, corniceNiche, colorRoof, credit;
 
-window.onload = function(){
+console.log("hello1");
+
+window.onload = () =>{
+		document.getElementById("arrowContainer").addEventListener("click", () => {
+			window.scrollTo(0, 0);
+			document.getElementById("arrowContainer").style.cssText = "animation: anim1 1.2s ease-out; opacity:0;";
+			setTimeout(() => {
+				document.getElementById("arrowContainer").style.cssText = "animation: toTheUp 1.2s ease-in-out infinite; opacity:0;";
+			}, 1200);
+		});
 squareCostFunction();
 cornersCostFunction();
 pipesCostFunction();
@@ -13,11 +22,12 @@ timberCostFunction();
 corniceNicheCostFunction();
 creditCostFunction();
 totalFunction();
-}
+};
 
 //calculate values in rightContainers
 
 function squareCostFunction(){
+	console.log(document.getElementById("square").value);
 	if (document.getElementById("square").value <=2){
 		document.getElementById("squareCost").innerHTML = document.getElementById("square").value * 1500;
 	}
@@ -136,3 +146,46 @@ function creditCostFunction(){
 function totalFunction(){
 	document.getElementById("total").innerHTML = (Number(square) + Number(corners) + Number(pipes) + Number(spotLights) + Number(bigLight) + Number(cornice) + Number(ceramicTiles) + Number(timber) + Number(corniceNiche) + Number(credit)) + " рублей";
 }
+//arrow to up
+const toUp = () =>{
+
+	let arrowContainer = document.createElement("div");
+	arrowContainer.id = "arrowContainer";
+	document.body.append(arrowContainer);
+
+	let topArrowShadow = document.createElement("div");
+	topArrowShadow.id = "topArrowShadow";
+	document.getElementById("arrowContainer").append(topArrowShadow);
+
+	let topArrow = document.createElement("div");
+	topArrow.id = "topArrow";
+	document.getElementById("topArrowShadow").append(topArrow);
+
+	let mainArrowShadow = document.createElement("div");
+	mainArrowShadow.id = "mainArrowShadow";
+	document.getElementById("arrowContainer").append(mainArrowShadow);
+
+	let mainArrow = document.createElement("div");
+	mainArrow.id = "mainArrow";
+	document.getElementById("mainArrowShadow").append(mainArrow);
+
+	let bottomArrowShadow = document.createElement("div");
+	bottomArrowShadow.id = "bottomArrowShadow";
+	document.getElementById("arrowContainer").append(bottomArrowShadow);
+
+	let bottomArrow = document.createElement("div");
+	bottomArrow.id = "bottomArrow";
+	document.getElementById("bottomArrowShadow").append(bottomArrow);
+
+}
+
+toUp();
+
+
+window.addEventListener("scroll", () => {
+	if (pageYOffset > 300){
+		document.getElementById("arrowContainer").style.cssText = "opacity:1";
+	} else {
+		document.getElementById("arrowContainer").style.cssText = "opacity:0";
+	}
+});
